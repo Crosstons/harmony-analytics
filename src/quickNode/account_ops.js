@@ -7,5 +7,5 @@ export const getBal = async(params) => {
 
 export const getTxs = async(params) => {
     const result = await provider.send("hmy_getTransactionsHistory", params);
-    return(result)
+    return(result.transactions);
 }
