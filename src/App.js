@@ -3,13 +3,15 @@ import './App.css';
 
 import { blockNo, gasPrice } from './quickNode/basic';
 import { useEffect } from 'react';
+import { getBal } from './quickNode/account_ops';
 
 function App() {
 
   useEffect(() =>{
     (async() => {
-      blockNo([]);
-      gasPrice([]);
+      await blockNo([]).then((value) => {console.log(value)});
+      await gasPrice([]).then((value) => {console.log(value)});
+      await getBal(["one1n6edazkg9ejc2wvpw35vusc0d0xr6kn0k00mdu", "latest"]).then((value) => {console.log(value)});
     })();
   }, []);
   
