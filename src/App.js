@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Landing from './screens/Landing';
+import Loader from './screens/Loader'
 
 import { blockNo, gasPrice } from './quickNode/basic';
 import { useEffect } from 'react';
@@ -14,11 +16,7 @@ function App() {
   }, []);
   
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </div>
+    <Landing />
   );
 }
 
