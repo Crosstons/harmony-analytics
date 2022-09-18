@@ -1,5 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
+=======
+import Landing from './screens/Landing';
+import Loader from './screens/Loader'
+
+import { blockNo, gasPrice } from './quickNode/basic';
+>>>>>>> 3ad9a4e5bf52409268704ce5b890330a9cf4b237
 import { useEffect } from 'react';
 import { getTxs } from './quickNode/account_ops';
 import moment from 'moment/moment';
@@ -25,6 +32,7 @@ function App() {
   }, []);
   
   return (
+<<<<<<< HEAD
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -41,6 +49,9 @@ function App() {
         </a>
       </header>
     </div>
+=======
+    <Landing />
+>>>>>>> 3ad9a4e5bf52409268704ce5b890330a9cf4b237
   );
 }
 
