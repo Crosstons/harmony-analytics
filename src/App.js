@@ -1,9 +1,10 @@
 import './App.css';
 import Landing from './screens/Landing';
-import Loader from './screens/Loader'
+import Loader from './screens/Loader';
 import { useEffect } from 'react';
 import { getTxs } from './quickNode/account_ops';
 import moment from 'moment/moment';
+import Dashboard from './screens/Dashboard';
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
   }, []);
   
   return (
-    <Landing />
+    <Dashboard />
   );
 }
 
