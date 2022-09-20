@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { getTxs } from './quickNode/account_ops';
 import moment from 'moment/moment';
 import Dashboard from './screens/Dashboard';
+import Sidebar from './components/Sidebar';
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
   }, []);
   
   return (
-    <Dashboard />
+    <Sidebar />
   );
 }
 
