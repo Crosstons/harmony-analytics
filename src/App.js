@@ -2,7 +2,7 @@ import './App.css';
 import Landing from './screens/Landing';
 import Loader from './screens/Loader';
 import { useEffect } from 'react';
-import { getTxs } from './quickNode/account_ops';
+import { getWalletBalance } from './covalent/api';
 import moment from 'moment/moment';
 import Dashboard from './screens/Dashboard';
 
@@ -10,24 +10,13 @@ function App() {
 
   useEffect(() =>{
     (async() => {
-      await getTxs([{
-          "address": "one1n6edazkg9ejc2wvpw35vusc0d0xr6kn0k00mdu",
-          "pageIndex": 0,
-          "pageSize": 10,
-          "fullTx": true,
-          "txType": "ALL",
-          "order": "DESC",
-      }]).then((value) => {
-      //  console.log(moment(parseInt(value[0].timestamp)*1000)._d);
-        for(const val of value) {
-          console.log(moment(parseInt(val.timestamp)*1000)._d);
-        }
-      });
+      const bal = await getWalletBalance("one1lp064pjyg8ysj73wphry3vgv3mhgrxj3knw3ye");
+      console.log(bal);
     })();
   }, []);
   
   return (
-    <Dashboard />
+    <Landing />
   );
 }
 
