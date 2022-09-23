@@ -57,8 +57,8 @@ const data = [
 function Lchart() {
   return (
     <AreaChart
-      width={500}
-      height={400}
+      width={400}
+      height={350}
       data={data}
       margin={{
         top: 10,
