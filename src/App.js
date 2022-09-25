@@ -1,19 +1,19 @@
 import './App.css';
-import Landing from './screens/Landing';
+// import Landing from './screens/Landing';
 // import Loader from './screens/Loader';
 import { useEffect } from 'react';
-import { getHRC20Balances} from './covalent/api';
-import { token_balances, portfolio_value24 } from './covalent/funcs';
+import { getHRC20Balances, getHistorical} from './covalent/api';
+import { historical_bal } from './covalent/funcs';
 // import moment from 'moment/moment';
-// import Dashboard from './screens/Dashboard';
+ import Dashboard from './screens/Dashboard';
 
 function App() {
 
   useEffect(() =>{
     (async() => {
-      const bal = await getHRC20Balances("one1hs3l2xray42ydr0ney7rpv8mqyqxgl4xlzlgv8");
+      const bal = await getHistorical("one1hs3l2xray42ydr0ney7rpv8mqyqxgl4xlzlgv8", "30");
       console.log(bal);
-      const test = portfolio_value24(bal);
+      const test = historical_bal(bal,30);
       console.log(test);
     })();
   }, []);
