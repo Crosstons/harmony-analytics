@@ -1,5 +1,5 @@
 import './App.css';
-// import Landing from './screens/Landing';
+ import Landing from './screens/Landing';
 // import Loader from './screens/Loader';
 import { useEffect } from 'react';
 import { getHRC20Balances, getHistorical} from './covalent/api';
@@ -19,7 +19,7 @@ function App() {
   }, []);
   
   return (
-    <Landing />
+    <Dashboard />
   );
 }
 
