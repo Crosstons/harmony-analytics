@@ -12,3 +12,11 @@ export const getTransactions = async(address, token) => {
     const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${address}/transfers_v2/?contract-address=${token}&key=${APIKEY}`);
     return res.data.data;
 }
+
+export const getHistorical = async(address, days) => {
+    days = parseInt(days);
+    days -= 1;;
+    days = String(days);
+    const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${address}/portfolio_v2/?days=${days}&key=${APIKEY}`);
+    return res.data.data.items;
+}
