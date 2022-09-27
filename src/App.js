@@ -19,7 +19,7 @@ function App() {
   }, []);
   
   return (
-    <Dashboard />
+    <Landing />
   );
 }
 
