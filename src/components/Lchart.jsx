@@ -53,7 +53,6 @@ const data = [
   }
 ];
 
-
 function Lchart() {
   return (
     <AreaChart

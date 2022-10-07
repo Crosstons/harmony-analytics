@@ -2,8 +2,6 @@ import React from 'react';
 import logo from '../images/logo.png';
 function Navbar() {
   return (
-  
-
 <nav className="bg-sss border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 w-full h-20 items-center flex">
   <div className="container flex flex-wrap justify-between items-center mx-auto">
   <a href="https://flowbite.com/" className="flex items-center">
