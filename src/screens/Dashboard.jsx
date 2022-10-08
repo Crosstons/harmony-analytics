@@ -11,11 +11,12 @@ class Dashboard extends React.Component {
   state = {loading : true, curr_value : 0, avg_value : 0};
 
   componentDidMount(){
-    getHRCBalances("one1hs3l2xray42ydr0ney7rpv8mqyqxgl4xlzlgv8").then((bal) => {
+    getHRCBalances().then((bal) => {
       this.setState({curr_value : portfolio_value(bal), avg_value : portfolio_value24(bal)});
       this.setState({loading : false});
     });
   }
+
   render (){
   return (
     <div className="grid overflow-hidden grid-cols-6 grid-rows-12 gap-4  w-screen h-screen">

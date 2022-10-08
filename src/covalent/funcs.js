@@ -14,18 +14,22 @@ export const token_balances = (balances) => {
 // Current Value of the Portfolio
 export const portfolio_value = (balances) => {
     let val = 0;
-    for(const tok of balances){
+    for(const add of balances) {
+        for(const tok of add.bal){
         val += tok.quote;
-    }    
+        }    
+    }
     return val;
 }
 
 // The 24 Hr Avg Value of Portfolio
 export const portfolio_value24 = (balances) => {
     let val = 0;
-    for(const tok of balances){
+    for(const add of balances) {
+        for(const tok of add.bal){
         val += tok.quote_24h;
-    }    
+        }    
+    }   
     return val;
 }
 
