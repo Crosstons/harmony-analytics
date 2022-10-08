@@ -1,15 +1,21 @@
+// Token Balances in the form of an object array
+// The returned value can be used for the "Pie Chart"
+
 export const token_balances = (balances) => {
     let token_bal = [];
     for(const tok of balances){
-        token_bal.push({sym : tok.contract_ticker_symbol, bal : parseInt(tok.balance_24h)/(10**parseInt(tok.contract_decimals))});
+        if(tok.quote !== 0){
+            token_bal.push({name : tok.contract_ticker_symbol, value : tok.quote});
+        }
     }
     return token_bal;
 }
 
+// Current Value of the Portfolio
 export const portfolio_value = (balances) => {
     let val = 0;
     for(const tok of balances){
-        val += parseInt(tok.balance)/(10**parseInt(tok.contract_decimals)) * tok.quote_rate;
+        val += tok.quote;
     }    
     return val;
 }
@@ -18,7 +24,7 @@ export const portfolio_value = (balances) => {
 export const portfolio_value24 = (balances) => {
     let val = 0;
     for(const tok of balances){
-        val += parseInt(tok.balance_24h)/(10**parseInt(tok.contract_decimals)) * tok.quote_rate_24h;
+        val += tok.quote_24h;
     }    
     return val;
 }
