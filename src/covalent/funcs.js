@@ -1,5 +1,6 @@
 // Token Balances in the form of an object array
 // The returned value can be used for the "Pie Chart"
+
 export const token_balances = (balances) => {
     let token_bal = [];
     for(const tok of balances){
