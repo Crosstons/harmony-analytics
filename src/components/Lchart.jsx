@@ -159,17 +159,6 @@ const data = [
 ];
 export default function Earnings() {
   return (
-    <Section>
-      <div className="top">
-        <div className="info">
-          <h5>This month earnings</h5>
-          <h1>$682.5</h1>
-          <div className="growth">
-            <span>+2.45%</span>
-          </div>
-        </div>
-      </div>
-      <div className="chart">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             width={500}
@@ -189,8 +178,6 @@ export default function Earnings() {
             />
           </AreaChart>
         </ResponsiveContainer>
-      </div>
-    </Section>
   );
 }
 const Section = styled.section`

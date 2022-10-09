@@ -1,18 +1,19 @@
 import React from 'react';
 import Datacard1 from '../components/Datacard1';
-import Lchart from '../components/Lchart';
+import Earnings from '../components/Lchart';
+import HoldingsPie from '../components/PieChart';
 import { getHRCBalances} from '../covalent/api';
-import { portfolio_value, portfolio_value24 } from '../covalent/funcs';
+import { portfolio_value, portfolio_value24, token_balances } from '../covalent/funcs';
 import Navbar from '../components/Navbar';
 import Loader from './Loader';
 
 class Dashboard extends React.Component {
 
-  state = {loading : true, curr_value : 0, avg_value : 0};
+  state = {loading : true, curr_value : 0, avg_value : 0, holdingsData : []};
 
   componentDidMount(){
     getHRCBalances().then((bal) => {
-      this.setState({curr_value : portfolio_value(bal), avg_value : portfolio_value24(bal)});
+      this.setState({curr_value : portfolio_value(bal), avg_value : portfolio_value24(bal), holdingsData : token_balances(bal)});
       this.setState({loading : false});
     });
   }
@@ -27,8 +28,10 @@ class Dashboard extends React.Component {
     <div className="box row-start-2 row-span-3 col-start-2 col-span-1">
       {this.state.loading ? <Loader /> : <Datacard1 title={"24HR Avg Value : "} data={this.state.avg_value}/>}
     </div>
-    <div className="box row-start-2 row-span-3 col-start-3 col-span-2"><Lchart /></div>
-    <div className="box row-start-2 row-span-3 col-start-5 col-span-2"></div>
+    <div className="box row-start-2 row-span-3 col-start-3 col-span-2"><Earnings /></div>
+    <div className="box row-start-2 row-span-3 col-start-5 col-span-2">
+      {this.state.loading ? <Loader /> : <HoldingsPie data={this.state.holdingsData}/>}
+    </div>
     <div className="box row-start-5 row-span-4 col-start-1 col-span-3">6</div>
     <div className="box row-start-5 row-span-4 col-start-4 col-span-3"></div>
 </div>
