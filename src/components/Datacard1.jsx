@@ -13,4 +13,4 @@ class Datacard1 extends React.Component {
     )
   }
 }
-export default Datacard1
+export default Datacard1;
