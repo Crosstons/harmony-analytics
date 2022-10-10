@@ -1,6 +1,8 @@
 // Token Balances in the form of an object array
 // The returned value can be used for the "Pie Chart"
 
+import moment from "moment";
+
 export const token_balances = (balances) => {
     let token_bal = [];
     for(const add of balances) {
@@ -57,4 +59,39 @@ export const historical_bal = (balances, days) => {
         i++;
     }
     return hist_bal;
+}
+
+export const non_zero_tokens = (balances) => {
+    let tokens = [];
+    for(const add of balances) {
+        for(const tok of add.bal){
+            if(tok.balance !== 0){
+                const found = tokens.some(el => el.address === tok.contract_address);
+                if(!found){
+                    tokens.push({address : tok.contract_address});
+                }
+            }
+        }   
+    }
+    return tokens;    
+}
+
+export const tx_data_sorted = (txList, days) => {
+    console.log(txList);
+    let t = [];
+    let today = moment();
+    let i = 0;
+    while(i<days){
+        let count = 0;
+        for(const tL of txList){
+            if(moment(tL.timestamp).isSame(today, 'day')){
+                count += 1;
+            }
+        }
+        t.push({date : today.date(), count : count});
+        today.subtract(1, 'd');
+        i += 1;
+    }
+    console.log(t);
+    return t;
 }
