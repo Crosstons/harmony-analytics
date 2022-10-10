@@ -28,7 +28,7 @@ export const portfolio_value = (balances) => {
         val += tok.quote;
         }    
     }
-    return val;
+    return val.toFixed(2);
 }
 
 // The 24 Hr Avg Value of Portfolio
@@ -39,7 +39,7 @@ export const portfolio_value24 = (balances) => {
             val += tok.quote_24h;
         }    
     }   
-    return val;
+    return val.toFixed(2);
 }
 
 // Historical Data for the Line Chart !!
@@ -56,6 +56,5 @@ export const historical_bal = (balances, days) => {
         hist_bal.push({data : d_bal});
         i++;
     }
-    console.log(hist_bal);
     return hist_bal;
 }

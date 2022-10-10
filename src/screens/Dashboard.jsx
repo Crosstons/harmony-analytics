@@ -8,7 +8,6 @@ import Navbar from '../components/Navbar';
 import Loader from './Loader';
 
 class Dashboard extends React.Component {
-
   state = {loading : true, curr_value : 0, avg_value : 0, holdingsData : []};
 
   componentDidMount(){

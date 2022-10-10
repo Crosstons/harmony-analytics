@@ -9,9 +9,9 @@ export default class Earnings extends PureComponent {
   state = {loading : true, data : []}
 
   componentDidMount(){
-    getHistorical(7).then((bal) => {
+    getHistorical(30).then((bal) => {
       console.log(bal);
-      this.setState({data : historical_bal(bal, 7)});
+      this.setState({data : historical_bal(bal, 30)});
     });
   }
 
