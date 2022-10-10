@@ -17,7 +17,6 @@ export const token_balances = (balances) => {
             }
         }   
     }
-    console.log(token_bal);
     return token_bal;
 }
 
@@ -49,11 +48,14 @@ export const historical_bal = (balances, days) => {
     let i = 0;
     while(i<days){
         let d_bal = 0;
-        for(const tok of balances){
-            d_bal += tok.holdings[i].high.quote;
-        }
-        hist_bal.push({day : i, val : d_bal});
+        for(const add of balances){
+            for(const tok of add.bal){
+                d_bal += tok.holdings[i].high.quote;
+            }
+        }   
+        hist_bal.push({data : d_bal});
         i++;
     }
+    console.log(hist_bal);
     return hist_bal;
 }

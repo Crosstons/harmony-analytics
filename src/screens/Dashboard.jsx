@@ -28,7 +28,9 @@ class Dashboard extends React.Component {
     <div className="box row-start-2 row-span-3 col-start-2 col-span-1">
       {this.state.loading ? <Loader /> : <Datacard1 title={"24HR Avg Value : "} data={this.state.avg_value}/>}
     </div>
-    <div className="box row-start-2 row-span-3 col-start-3 col-span-2"><Earnings /></div>
+    <div className="box row-start-2 row-span-3 col-start-3 col-span-2">
+      <Earnings />
+    </div>
     <div className="box row-start-2 row-span-3 col-start-5 col-span-2">
       {this.state.loading ? <Loader /> : <HoldingsPie data={this.state.holdingsData}/>}
     </div>
