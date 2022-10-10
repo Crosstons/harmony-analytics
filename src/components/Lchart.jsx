@@ -1,198 +1,72 @@
-import React from "react";
-import styled from "styled-components";
-import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
-import { cardStyles } from "./ReusableStyles";
+import React, { PureComponent } from 'react';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
 const data = [
-  { data: 4500 },
   {
-    data: 5000,
+    name: 'Page A',
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
   },
   {
-    data: 4700,
+    name: 'Page B',
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
   },
   {
-    data: 4400,
+    name: 'Page C',
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
   },
   {
-    data: 4800,
+    name: 'Page D',
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
   },
   {
-    data: 5300,
+    name: 'Page E',
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
   },
   {
-    data: 5800,
+    name: 'Page F',
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
   },
   {
-    data: 6000,
-  },
-  {
-    data: 6300,
-  },
-  {
-    data: 6580,
-  },
-  {
-    data: 6780,
-  },
-  {
-    data: 6680,
-  },
-  {
-    data: 6500,
-  },
-  {
-    data: 6300,
-  },
-  {
-    data: 5900,
-  },
-  {
-    data: 5700,
-  },
-  {
-    data: 5500,
-  },
-  {
-    data: 5300,
-  },
-  {
-    data: 5100,
-  },
-  {
-    data: 5090,
-  },
-  {
-    data: 5300,
-  },
-  {
-    data: 5800,
-  },
-  {
-    data: 6000,
-  },
-  {
-    data: 6300,
-  },
-  {
-    data: 6780,
-  },
-  {
-    data: 6500,
-  },
-  {
-    data: 6300,
-  },
-  {
-    data: 6500,
-  },
-  {
-    data: 6700,
-  },
-  {
-    data: 7000,
-  },
-  {
-    data: 7300,
-  },
-  {
-    data: 7500,
-  },
-  {
-    data: 7700,
-  },
-  {
-    data: 8090,
-  },
-  {
-    data: 8190,
-  },
-  {
-    data: 7990,
-  },
-
-  {
-    data: 7700,
-  },
-  {
-    data: 7500,
-  },
-  {
-    data: 7300,
-  },
-  {
-    data: 7000,
-  },
-  {
-    data: 6700,
-  },
-  {
-    data: 6500,
-  },
-  {
-    data: 6300,
-  },
-  {
-    data: 6500,
-  },
-  {
-    data: 6780,
-  },
-  {
-    data: 6300,
-  },
-  {
-    data: 6000,
-  },
-  {
-    data: 5800,
-  },
-
-  {
-    data: 5490,
-  },
-  {
-    data: 6000,
-  },
-  {
-    data: 8000,
+    name: 'Page G',
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
   },
 ];
-export default function Earnings() {
+
+function Lchart() {
   return (
-    <Section>
-      <div className="top">
-        <div className="info">
-          <h5>This month earnings</h5>
-          <h1>$682.5</h1>
-          <div className="growth">
-            <span>+2.45%</span>
-          </div>
-        </div>
-      </div>
-      <div className="chart">
-        <ResponsiveContainer width="100%" height="100%">
-          <AreaChart
-            width={500}
-            height={400}
-            data={data}
-            margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
-          >
-            <Tooltip cursor={false} />
-            <Area
-              animationBegin={800}
-              animationDuration={2000}
-              type="monotone"
-              dataKey="data"
-              stroke="#ffc107"
-              fill="#8068233e"
-              strokeWidth={4}
-            />
-          </AreaChart>
-        </ResponsiveContainer>
-      </div>
-    </Section>
-  );
+    <ResponsiveContainer width="100%" height="100%">
+        <AreaChart
+          width={200}
+          height={60}
+          data={data}
+          margin={{
+            top: 5,
+            right: 0,
+            left: 0,
+            bottom: 5,
+          }}
+        >
+          <Area type="monotone" dataKey="uv" stroke="#28B78D" fill="#28B78D" />
+        </AreaChart>
+      </ResponsiveContainer>
+  )
 }
+
+export default Lchart
 const Section = styled.section`
   display: flex;
   flex-direction: column;
