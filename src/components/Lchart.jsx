@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { PureComponent } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
@@ -64,6 +65,48 @@ function Lchart() {
         </AreaChart>
       </ResponsiveContainer>
   )
+=======
+import React, { PureComponent } from "react";
+import styled from "styled-components";
+import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
+import { cardStyles } from "./ReusableStyles";
+import { getHistorical } from "../covalent/api";
+import { historical_bal } from "../covalent/funcs";
+
+export default class Earnings extends PureComponent {
+  state = {loading : true, data : []}
+
+  componentDidMount(){
+    getHistorical(7).then((bal) => {
+      console.log(bal);
+      this.setState({data : historical_bal(bal, 7)});
+    });
+  }
+
+  render() {
+  return (
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart
+            width={500}
+            height={400}
+            data={this.state.data.reverse()}
+            margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
+          >
+            <Tooltip cursor={false} />
+            <Area
+              animationBegin={800}
+              animationDuration={2000}
+              type="monotone"
+              dataKey="data"
+              stroke="#ffc107"
+              fill="#8068233e"
+              strokeWidth={4}
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+    );
+  }
+>>>>>>> d4610f18725d5e63060c9459de71682f9e591bf1
 }
 
 export default Lchart

@@ -20,10 +20,15 @@ export const getTransactions = async(address, token) => {
     return res.data.data;
 }
 
-export const getHistorical = async(address, days) => {
+export const getHistorical = async(days) => {
+    let bal = [];
     days = parseInt(days);
     days -= 1;;
     days = String(days);
-    const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${address}/portfolio_v2/?days=${days}&key=${APIKEY}`);
-    return res.data.data.items;
+    for(const i of inputAddresses){
+        const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${i.WalletAddress}/portfolio_v2/?days=${days}&key=${APIKEY}`);
+        let addr = i.WalletAddress;
+        bal.push({addr : addr, bal : res.data.data.items});
+    }
+    return bal;
 }
