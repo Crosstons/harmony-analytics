@@ -1,6 +1,8 @@
 // Token Balances in the form of an object array
 // The returned value can be used for the "Pie Chart"
 
+import moment from "moment";
+
 export const token_balances = (balances) => {
     let token_bal = [];
     for(const add of balances) {
@@ -28,7 +30,7 @@ export const portfolio_value = (balances) => {
         val += tok.quote;
         }    
     }
-    return val;
+    return val.toFixed(2);
 }
 
 // The 24 Hr Avg Value of Portfolio
@@ -39,7 +41,7 @@ export const portfolio_value24 = (balances) => {
             val += tok.quote_24h;
         }    
     }   
-    return val;
+    return val.toFixed(2);
 }
 
 // Historical Data for the Line Chart !!
@@ -56,6 +58,38 @@ export const historical_bal = (balances, days) => {
         hist_bal.push({data : d_bal});
         i++;
     }
-    console.log(hist_bal);
     return hist_bal;
+}
+
+export const non_zero_tokens = (balances) => {
+    let tokens = [];
+    for(const add of balances) {
+        for(const tok of add.bal){
+            if(tok.balance !== 0){
+                const found = tokens.some(el => el.address === tok.contract_address);
+                if(!found){
+                    tokens.push({address : tok.contract_address});
+                }
+            }
+        }   
+    }
+    return tokens;    
+}
+
+export const tx_data_sorted = (txList, days) => {
+    let t = [];
+    let today = moment();
+    let i = 0;
+    while(i<days){
+        let count = 0;
+        for(const tL of txList){
+            if(moment(tL.timestamp).isSame(today, 'day')){
+                count += 1;
+            }
+        }
+        t.push({name : today.date(), Txs : count});
+        today.subtract(1, 'd');
+        i += 1;
+    }
+    return t;
 }

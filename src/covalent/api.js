@@ -15,11 +15,6 @@ export const getHRCBalances = async() => {
     return bal;
 }
 
-export const getTransactions = async(address, token) => {
-    const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${address}/transfers_v2/?contract-address=${token}&key=${APIKEY}`);
-    return res.data.data;
-}
-
 export const getHistorical = async(days) => {
     let bal = [];
     days = parseInt(days);
@@ -31,4 +26,31 @@ export const getHistorical = async(days) => {
         bal.push({addr : addr, bal : res.data.data.items});
     }
     return bal;
+}
+
+
+export const getHRC20Txs = async(tokenList) => {
+    let txs = [];
+    for(const i of inputAddresses){
+        for(const tok of tokenList){
+            if(tok.address !== "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"){
+                const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${i.WalletAddress}/transfers_v2/?quote-currency=USD&format=JSON&contract-address=${tok.address}&key=${APIKEY}`);
+                for(const i of res.data.data.items){
+                    txs.push({hash : i.tx_hash, timestamp : i.block_signed_at});
+                }
+            }
+        }
+    }
+    return txs;
+}
+
+export const getTransactions = async() => {
+    let txs = [];
+    for(const i of inputAddresses){
+        const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${i.WalletAddress}/transactions_v2/?key=${APIKEY}`);
+        for(const j of res.data.data.items){
+            txs.push({hash : j.tx_hash, timestamp : j.block_signed_at});
+        }
+    }
+    return txs;
 }
