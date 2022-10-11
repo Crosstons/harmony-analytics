@@ -9,14 +9,14 @@ export default class Earnings extends PureComponent {
   state = {loading : true, data : []}
 
   componentDidMount(){
-    getHistorical(30).then((bal) => {
-      this.setState({data : historical_bal(bal, 30)});
+    getHistorical(7).then((bal) => {
+      console.log(bal);
+      this.setState({data : historical_bal(bal, 7)});
     });
   }
 
   render() {
   return (
-    <div>
         <ResponsiveContainer width="75%" height="50%">
           <AreaChart
             width={500}
@@ -30,13 +30,12 @@ export default class Earnings extends PureComponent {
               animationDuration={2000}
               type="monotone"
               dataKey="data"
-              stroke="#ffc107"
-              fill="#8068233e"
+              stroke="#28B78D"
+              fill="#3a504b"
               strokeWidth={4}
             />
           </AreaChart>
         </ResponsiveContainer>
-     </div>
     );
   }
 }

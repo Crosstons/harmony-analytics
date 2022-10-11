@@ -28,9 +28,13 @@ export class Txs extends PureComponent{
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis />
-              <Tooltip />
+              <Tooltip cursor={false} />
               <Legend />
-              <Line type="monotone" dataKey="Txs" stroke="#8884d8" activeDot={{ r: 8 }} />
+              <Line type="monotone" 
+              animationBegin={800}
+              animationDuration={2000}
+              fill="#3a504b"
+              strokeWidth={3} dataKey="Txs" stroke="#28B78D" activeDot={{ r: 6 }} />
             </LineChart>
           </ResponsiveContainer>
         );
