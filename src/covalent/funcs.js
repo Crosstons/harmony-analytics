@@ -77,7 +77,6 @@ export const non_zero_tokens = (balances) => {
 }
 
 export const tx_data_sorted = (txList, days) => {
-    console.log(txList);
     let t = [];
     let today = moment();
     let i = 0;
@@ -88,10 +87,9 @@ export const tx_data_sorted = (txList, days) => {
                 count += 1;
             }
         }
-        t.push({date : today.date(), count : count});
+        t.push({name : today.date(), Txs : count});
         today.subtract(1, 'd');
         i += 1;
     }
-    console.log(t);
     return t;
 }

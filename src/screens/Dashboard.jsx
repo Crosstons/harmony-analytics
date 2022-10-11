@@ -7,6 +7,7 @@ import { non_zero_tokens, portfolio_value, portfolio_value24, token_balances } f
 import Navbar from '../components/Navbar';
 import Loader from './Loader';
 import { Txs } from '../components/Txs';
+import { TxList } from '../components/txList';
 
 class Dashboard extends React.Component {
   state = {loading : true, curr_value : 0, avg_value : 0, holdingsData : [], nonZero_tokens : []};
@@ -28,7 +29,7 @@ class Dashboard extends React.Component {
       {this.state.loading ? <Loader /> : <Datacard1 title={"24HR Avg Value : "} data={this.state.avg_value}/>}
     </div>
     <div className="box row-start-2 row-span-3 col-start-3 col-span-2">
-      <Earnings />
+      {this.state.loading ? <Loader /> : <Earnings />}
     </div>
     <div className="box row-start-2 row-span-3 col-start-5 col-span-2">
       {this.state.loading ? <Loader /> : <HoldingsPie data={this.state.holdingsData}/>}
@@ -36,7 +37,9 @@ class Dashboard extends React.Component {
     <div className="box row-start-5 row-span-4 col-start-1 col-span-3">
       {this.state.loading ? <Loader /> : <Txs data={this.state.nonZero_tokens}/>}
     </div>
-    <div className="box row-start-5 row-span-4 col-start-4 col-span-3"></div>
+    <div className="box row-start-5 row-span-4 col-start-4 col-span-3">
+      {this.state.loading ? <Loader /> : <TxList />}
+    </div>
 </div>
     )
   }

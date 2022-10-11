@@ -43,3 +43,14 @@ export const getHRC20Txs = async(tokenList) => {
     }
     return txs;
 }
+
+export const getTransactions = async() => {
+    let txs = [];
+    for(const i of inputAddresses){
+        const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${i.WalletAddress}/transactions_v2/?key=${APIKEY}`);
+        for(const j of res.data.data.items){
+            txs.push({hash : j.tx_hash, timestamp : j.block_signed_at});
+        }
+    }
+    return txs;
+}
