@@ -22,7 +22,7 @@ export const TxList = () => {
                     tx.map((hash) => (
                         <li className="p-3 hover:bg-blue-600 hover:text-blue-200">
                             <a href={`https://explorer.harmony.one/tx/${hash.hash}`}>
-                                {hash.timestamp}
+                                {hash.hash}
                             </a>
                         </li>
                     ))
