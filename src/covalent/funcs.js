@@ -48,6 +48,7 @@ export const portfolio_value24 = (balances) => {
 export const historical_bal = (balances, days) => {
     let hist_bal = [];
     let i = 0;
+    let d = moment();
     while(i<days){
         let d_bal = 0;
         for(const add of balances){
@@ -55,7 +56,8 @@ export const historical_bal = (balances, days) => {
                 d_bal += tok.holdings[i].high.quote;
             }
         }   
-        hist_bal.push({data : d_bal});
+        hist_bal.push({name : d.date(), value : d_bal.toFixed(2)});
+        d.subtract(1 , 'd');
         i++;
     }
     return hist_bal;
