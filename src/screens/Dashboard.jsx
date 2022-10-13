@@ -8,6 +8,7 @@ import Navbar from '../components/Navbar';
 import Loader from './Loader';
 import { Txs } from '../components/Txs';
 import { TxList } from '../components/txList';
+import { LineChart, PieChart } from 'recharts';
 
 class Dashboard extends React.Component {
   state = {loading : true, curr_value : 0, avg_value : 0, holdingsData : [], nonZero_tokens : []};
@@ -20,27 +21,28 @@ class Dashboard extends React.Component {
 
   render (){
   return (
-    <div className="grid overflow-hidden grid-cols-6 grid-rows-12 gap-4  w-screen h-screen">
-    <div className="box row-start-1 row-span-1 col-start-1 col-span-6"><Navbar /></div>
-    <div className="box row-start-2 row-span-3 col-start-1 col-span-1">
-      {this.state.loading ? <Loader /> : <Datacard1 title={"Current Value : "} data={this.state.curr_value}/>}
-    </div>
-    <div className="box row-start-2 row-span-3 col-start-2 col-span-1">
-      {this.state.loading ? <Loader /> : <Datacard1 title={"24HR Avg Value : "} data={this.state.avg_value}/>}
-    </div>
-    <div className="box row-start-2 row-span-3 col-start-3 col-span-2">
-      {this.state.loading ? <Loader /> : <Earnings />}
-    </div>
-    <div className="box row-start-2 row-span-3 col-start-5 col-span-2">
-      {this.state.loading ? <Loader /> : <HoldingsPie data={this.state.holdingsData}/>}
-    </div>
-    <div className="box row-start-5 row-span-4 col-start-1 col-span-3">
-      {this.state.loading ? <Loader /> : <Txs data={this.state.nonZero_tokens}/>}
-    </div>
-    <div className="box row-start-5 row-span-4 col-start-4 col-span-3">
-      {this.state.loading ? <Loader /> : <TxList />}
-    </div>
-</div>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main className="">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-wrap -m-4">
+            <div className="p-4 md:w-1/3">
+              {this.state.loading ? <Loader /> :<Datacard1 title={"Current Value : "} data={this.state.curr_value}/>}
+            </div>
+            <div className="p-4 md:w-1/3">
+            {this.state.loading ? <Loader /> :<Datacard1 title={"24HR Avg Value : "} data={this.state.curr_value}/>}
+            </div>
+            <div className="p-4 md:w-1/3">
+              <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
+            {this.state.loading ?<Loader /> : <Earnings />}
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
     )
   }
 }
