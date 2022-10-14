@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
         <Navbar />
       </header>
       <main className="">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-12 mx-auto">
           <div className="flex flex-wrap -m-4">
             <div className="p-4 md:w-1/3">
               {this.state.loading ? <Loader /> :<Datacard1 title={"Current Value "} data={this.state.curr_value}/>}
@@ -41,18 +41,28 @@ class Dashboard extends React.Component {
             </div>
           </div>
         </div>
-
         <div className="container px-5 py-12 mx-auto">
           <div className="flex flex-wrap -m-4">
-            <div className="p-4 md:w-1/2">
+            <div className="p-4 md:w-1/3">
+              <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10">
               {this.state.loading ? <Loader /> :<Txs data={this.state.nonZero_tokens}/>}
+              </div>
             </div>
-            <div className="p-4 md:w-1/2">
+            <div className="p-4 md:w-1/3">
+            <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10">
             {this.state.loading ? <Loader /> :<HoldingsPie data={this.state.holdingsData}/>}
             </div>
-          </div>
+            </div>                                                                                               
+            <div className="p-4 md:w-1/3">
+              <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
+            {this.state.loading ?<Loader /> : <Earnings />}
+              </div>
+            </div>
+            </div>
         </div>
-      </main>
+
+            
+         </main>
     </>
     )
   }

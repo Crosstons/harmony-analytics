@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
 import { AreaChart, Area, XAxis, Tooltip, YAxis } from "recharts";
-import { cardStyles } from "./ReusableStyles";
 import { getHistorical } from "../covalent/api";
 import { historical_bal } from "../covalent/funcs";
 
