@@ -69,8 +69,10 @@ export default class HoldingsPie extends PureComponent {
 
   render() {
     return (
-      <ResponsiveContainer width="100%" height="100%">
-        <PieChart width={400} height={400}>
+      
+      <>
+
+        <PieChart width={450} height={400}>
           <Pie
             activeIndex={this.state.activeIndex}
             activeShape={renderActiveShape}
@@ -84,7 +86,9 @@ export default class HoldingsPie extends PureComponent {
             onMouseEnter={this.onPieEnter}
           />
         </PieChart>
-      </ResponsiveContainer>
+        <div className="mt-4 text-2xl text-spicy text-semibold font-barlow">Lorem Ipsum</div>
+      </>
+      
     );
   }
 }

@@ -27,39 +27,48 @@ class Dashboard extends React.Component {
       </header>
       <main className="">
         <div className="container px-5 py-12 mx-auto">
-          <div className="flex flex-wrap -m-4">
+          <div className="flex flex-wrap m-4">
             <div className="p-4 md:w-1/3">
+            <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
               {this.state.loading ? <Loader /> :<Datacard1 title={"Current Value "} data={this.state.curr_value}/>}
             </div>
+            </div>
             <div className="p-4 md:w-1/3">
+            <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
             {this.state.loading ? <Loader /> :<Datacard1 title={"24HR Avg Value "} data={this.state.curr_value}/>}
+            </div>
             </div>
             <div className="p-4 md:w-1/3">
               <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
-            {this.state.loading ?<Loader /> : <Earnings />}
+              <div class="">
+                {this.state.loading ?<Loader /> : <Earnings />}
+            </div>
               </div>
             </div>
           </div>
         </div>
         <div className="container px-5 py-12 mx-auto">
-          <div className="flex flex-wrap -m-4">
+          <div className="flex flex-wrap m-4">
             <div className="p-4 md:w-1/3">
-              <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10">
-              {this.state.loading ? <Loader /> :<Txs data={this.state.nonZero_tokens}/>}
-              </div>
+            <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
+            {this.state.loading ? <Loader /> :<Txs data={this.state.nonZero_tokens}/>}
+            </div>
             </div>
             <div className="p-4 md:w-1/3">
-            <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10">
+            <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
             {this.state.loading ? <Loader /> :<HoldingsPie data={this.state.holdingsData}/>}
             </div>
-            </div>                                                                                               
+            </div>
             <div className="p-4 md:w-1/3">
               <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
-            {this.state.loading ?<Loader /> : <Earnings />}
+              <div class="p-3">
+            {this.state.loading ?<Loader /> : <TxList />}
+            </div>
               </div>
             </div>
-            </div>
+          </div>
         </div>
+        
 
             
          </main>
@@ -67,5 +76,4 @@ class Dashboard extends React.Component {
     )
   }
 }
-
 export default Dashboard;
