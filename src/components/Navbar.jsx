@@ -9,11 +9,11 @@ function Navbar() {
       <span className="self-center text-2xl font-barlow font-semibold whitespace-nowrap text-mild">Harmony Analytics</span>
   </a>
   <div className="flex md:order-2">
-  <div class="flex justify-center">
+  <div className="flex justify-center">
   <div>
-    <div class="dropdown relative">
+    <div className="dropdown relative">
       <button
-        class="
+        className="
           dropdown-toggle
           px-6
           py-2.5
@@ -46,7 +46,7 @@ function Navbar() {
           focusable="false"
           data-prefix="fas"
           data-icon="caret-down"
-          class="w-2 ml-2"
+          className="w-2 ml-2"
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 320 512"
@@ -58,7 +58,7 @@ function Navbar() {
         </svg>
       </button>
       <ul
-        class="
+        className="
           dropdown-menu
           min-w-max
           absolute
@@ -81,7 +81,7 @@ function Navbar() {
       >
         <li>
           <a
-            class="
+            className="
               dropdown-item
               text-sm
               py-2
@@ -100,7 +100,7 @@ function Navbar() {
         </li>
         <li>
           <a
-            class="
+            className="
               dropdown-item
               text-sm
               py-2
@@ -119,7 +119,7 @@ function Navbar() {
         </li>
         <li>
           <a
-            class="
+            className="
               dropdown-item
               text-sm
               py-2

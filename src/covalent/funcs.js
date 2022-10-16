@@ -53,10 +53,10 @@ export const historical_bal = (balances, days) => {
         let d_bal = 0;
         for(const add of balances){
             for(const tok of add.bal){
-                d_bal += tok.holdings[i].high.quote;
+                d_bal += tok.holdings[i].close.quote;
             }
         }   
-        hist_bal.push({name : d.date(), value : d_bal.toFixed(2)});
+        hist_bal.push({name : d.date(), value : parseFloat(d_bal.toFixed(2))});
         d.subtract(1 , 'd');
         i++;
     }
