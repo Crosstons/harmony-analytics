@@ -1,6 +1,6 @@
 import React from 'react';
 import Datacard1 from '../components/Datacard1';
-import Earnings from '../components/Lchart';
+import { Earnings } from '../components/Lchart';
 import HoldingsPie from '../components/PieChart';
 import { getHRCBalances} from '../covalent/api';
 import { non_zero_tokens, portfolio_value, portfolio_value24, token_balances } from '../covalent/funcs';
@@ -8,7 +8,6 @@ import Navbar from '../components/Navbar';
 import Loader from './Loader';
 import { Txs } from '../components/Txs';
 import { TxList } from '../components/txList';
-import { LineChart, PieChart } from 'recharts';
 
 class Dashboard extends React.Component {
   state = {loading : true, curr_value : 0, avg_value : 0, holdingsData : [], nonZero_tokens : []};
@@ -35,12 +34,12 @@ class Dashboard extends React.Component {
             </div>
             <div className="p-4 md:w-1/3">
             <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
-            {this.state.loading ? <Loader /> :<Datacard1 title={"24HR Avg Value "} data={this.state.curr_value}/>}
+            {this.state.loading ? <Loader /> :<Datacard1 title={"24HR Avg Value "} data={this.state.avg_value}/>}
             </div>
             </div>
             <div className="p-4 md:w-1/3">
               <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
-              <div class="">
+              <div className="">
                 {this.state.loading ?<Loader /> : <Earnings />}
             </div>
               </div>
@@ -61,7 +60,7 @@ class Dashboard extends React.Component {
             </div>
             <div className="p-4 md:w-1/3">
               <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
-              <div class="p-3">
+              <div className="p-3">
             {this.state.loading ?<Loader /> : <TxList />}
             </div>
               </div>

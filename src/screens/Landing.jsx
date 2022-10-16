@@ -12,7 +12,7 @@ function Landing() {
       <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-7 object-cover object-center rounded" alt="hero" src={logo}/>
       <div className="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
         <h1 className="title-font font-extrabold sm:text-6xl lg:text-8xl mb-4 font-barlow text-spicy">Harmony</h1> <h1 className="title-font font-semibol lg:text-6xl sm:text-4xl text-4xl mb-4 font-barlow text-white">Analytics</h1>
-        <p className="mb-8 leading-relaxed">Kickstarter biodiesel roof party wayfarers cold-pressed. Palo santo live-edge tumeric scenester copper mug flexitarian. Prism vice offal plaid everyday carry. Gluten-free chia VHS squid listicle artisan.</p>
+        <p className="mb-8 leading-relaxed">Get all the statistical data that your address/es need from the easy-to-use and fastest analytics platform for the hrc tokens.</p>
         <div className="flex w-full justify-center items-end">
           <div className="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-center">
             <Waddress /> <br />
