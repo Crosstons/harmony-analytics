@@ -17,10 +17,10 @@ export const TxList = () => {
     
     return(
         <>
-<div className="mt-2 mb-4 text-2xl text-spicy text-semibold font-barlow">Latest TXs</div>
-<div className="overflow-x-auto relative">
-    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+
+<div className="overflow-x-auto relative rounded-md">
+    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded-lg">
+        <thead className="text-lg text-spicy uppercase bg-hot dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" className="py-3 px-6">
                     Hash
@@ -30,8 +30,8 @@ export const TxList = () => {
         <tbody>
                 {
                     tx.map((hash) => (
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr className="bg-hot border-bottom border-emerald-700 rounded-xl text-mild">
+                        <th scope="row" className="py-4 px-6 font-medium text-spicy rounded-xl whitespace-nowrap dark:text-white">
                             <a href={`https://explorer.harmony.one/tx/${hash.hash}`}>
                                 {hash.hash.substring(0,30)}
                             </a>
@@ -42,6 +42,7 @@ export const TxList = () => {
         </tbody>
     </table>
 </div>
+<div className="mt-6 mb-4 text-2xl text-spicy text-semibold font-barlow">Latest TXs</div>
         </>
     );
 }

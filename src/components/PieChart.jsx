@@ -69,7 +69,7 @@ export default class HoldingsPie extends PureComponent {
 
   render() {
     return (
-      <>
+      <><div className="ml-6">
         <PieChart width={450} height={400}>
           <Pie
             activeIndex={this.state.activeIndex}
@@ -85,6 +85,7 @@ export default class HoldingsPie extends PureComponent {
           />
         </PieChart>
         <div className="text-2xl text-spicy text-semibold font-barlow">Token Holdings</div>
+        </div>
       </>
       
     );
