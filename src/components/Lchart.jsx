@@ -5,30 +5,28 @@ import { AreaChart, Area, XAxis, Tooltip, YAxis } from "recharts";
 import { getHistorical } from "../covalent/api";
 import { historical_bal } from "../covalent/funcs";
 
-
+let data_7 = [];
+let data_30 = [];
 export const Earnings = () => {
   const [checked, setCheck] = useState(false);
-  const [tempData, setTempData] = useState([]);
-  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
       const bal = await getHistorical(30);
-      setTempData(bal);
-      setData(historical_bal(bal,30));
+      data_30 = historical_bal(bal,30);
+      data_7 = historical_bal(bal,7);
+      setLoading(false);
     })();
   })
 
-  const handleChange = () => {
+  const handleChange = event => {
     if(!checked){
+      console.log(checked);
       setCheck(true);
-      let t = historical_bal(tempData,7);
-      setData(t);
     }
     else{
       setCheck(false);
-      setData(historical_bal(tempData,30));
-      console.log(data);
     }
   }
 
@@ -38,13 +36,13 @@ export const Earnings = () => {
     <label htmlFor="default-toggle" className="inline-flex relative cursor-pointer mb-10">
       <input type="checkbox" value="" id="default-toggle" className="sr-only peer" onChange={handleChange}/>
       <div className="w-11 h-6 bg-hot peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-emerald-300  rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-spicy"></div>
-      <span className="ml-3 text-sm font-medium text-mild">7D</span>
+      <span className="ml-3 text-sm font-medium text-mild">{loading ? "loading..." : "7D" }</span>
     </label>
             
           <AreaChart
             width={400}
             height={250}
-            data={data.reverse()}
+            data={checked ? data_7.reverse() : data_30.reverse()}
             margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
           >
             <XAxis dataKey="name" />
