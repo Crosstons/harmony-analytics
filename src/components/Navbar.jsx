@@ -10,11 +10,14 @@ function Navbar() {
   </a>
   <div className="flex md:order-2">
   <div className="flex justify-center">
-  <label for="large-toggle" class="inline-flex relative items-center cursor-pointer">
-  <input type="checkbox" value="" id="large-toggle" class="sr-only peer"/>
-  <div class="w-14 h-7 bg-hot peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-300 dark:peer-focus:ring-emerald-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-spicy"></div>
-  <span class="ml-3 text-sm font-medium text-mild dark:text-gray-300">HRC</span>
-</label>
+  <div class="inline-flex rounded-md shadow-sm" role="group">
+  <button type="button" class="py-2 px-4 text-sm font-medium text-mild bg-hot rounded-l-lg border-r-2 border-emerald-700 hover:bg-spicy hover:text-white focus:z-10 focus:bg-emerald-900 focus:text-white  peer-checked:bg-spicy">
+    XXX
+  </button>
+  <button type="button" class="py-2 px-4 text-sm font-medium text-mild bg-hot rounded-r-md  hover:bg-spicy hover:text-white focus:z-10 focus:bg-emerald-900 ">
+    YYY
+  </button>
+</div>
 </div>
       
   </div>
