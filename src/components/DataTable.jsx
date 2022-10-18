@@ -60,57 +60,7 @@ function DataTable() {
                     <a href="#" class="font-medium text-spicy hover:underline">Edit</a>
                 </td>
             </tr>
-            <tr class="border-b bg-sss border-gray-700">
-                <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap text-white">
-                    Magic Mouse 2
-                </th>
-                <td class="py-4 px-6">
-                    Black
-                </td>
-                <td class="py-4 px-6">
-                    Accessories
-                </td>
-                <td class="py-4 px-6">
-                    $99
-                </td>
-                <td class="py-4 px-6">
-                    <a href="#" class="font-medium text-spicy hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr class="border-b bg-hot border-gray-700">
-                <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap text-white">
-                    Google Pixel Phone
-                </th>
-                <td class="py-4 px-6">
-                    Gray
-                </td>
-                <td class="py-4 px-6">
-                    Phone
-                </td>
-                <td class="py-4 px-6">
-                    $799
-                </td>
-                <td class="py-4 px-6">
-                    <a href="#" class="font-medium text-spicy hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr class=" bg-sss">
-                <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap text-white">
-                    Apple Watch 5
-                </th>
-                <td class="py-4 px-6">
-                    Red
-                </td>
-                <td class="py-4 px-6">
-                    Wearables
-                </td>
-                <td class="py-4 px-6">
-                    $999
-                </td>
-                <td class="py-4 px-6">
-                    <a href="#" class="font-medium text-spicy hover:underline">Edit</a>
-                </td>
-            </tr>
+            
         </tbody>
     </table>
 </div>
