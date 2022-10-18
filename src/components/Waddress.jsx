@@ -31,7 +31,7 @@ function Waddress() {
     <div className="">
       {inputList.map((x, i) => {
         return (
-          <div className="font-barlow">
+          <div className="font-barlow" key={x}>
             <label htmlFor="hero-field" className="my-2 leading-7 text-lg text-gray-300">Wallet Address</label>
             <input name="WalletAddress" className="w-full bg-extreme rounded border bg-opacity-40 border-gray-700 focus:ring-2 focus:ring-emerald-900 focus:bg-transparent focus:border-emerald-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={x.WalletAddress} onChange={e => handleInputChange(e, i)}/>
             <div className="btn-box">
