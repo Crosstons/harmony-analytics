@@ -7,7 +7,6 @@ const blockchainChainId = '1666600000';
 export const getHRCBalances = async() => {
     let bal = [];
     for(const i of inputAddresses){
-//    const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${address}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=true&key=${APIKEY}`);
         const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${i.WalletAddress}/balances_v2/?quote-currency=USD&format=JSON&key=${APIKEY}`);
         let addr = i.WalletAddress;
         bal.push({ addr : addr, bal : res.data.data.items});
@@ -53,4 +52,19 @@ export const getTransactions = async() => {
         }
     }
     return txs;
+}
+
+export const getNFTs = async() => {
+    let NFTs = [];
+    for(const i of inputAddresses){
+        const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${i.WalletAddress}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=true&key=${APIKEY}`);
+        console.log(res.data.data);
+        for(const j of res.data.data.items){
+            if(j.type === "nft"){
+                console.log(j);
+                NFTs.push({contract_address : j.contract_address, contract_name : j.contract_name, type : j.supports_erc[1], balances : j.nft_data, last_interacted : j.last_transferred_at});
+            }
+        }
+    }
+    return NFTs;
 }

@@ -22,7 +22,6 @@ export const Earnings = () => {
 
   const handleChange = event => {
     if(!checked){
-      console.log(checked);
       setCheck(true);
     }
     else{
