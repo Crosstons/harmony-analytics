@@ -12,7 +12,7 @@ function Dashboard2() {
     <div className="container px-5 py-12 mx-auto">
           <div className="flex flex-wrap m-4">
             <div className="p-4 md:w-full">
-            <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
+            <div className="">
               <div className="p-3">
             <NftList />
             </div>
@@ -25,4 +25,4 @@ function Dashboard2() {
   )
 }
 
-export default Dashboard2
+export default Dashboard2;
