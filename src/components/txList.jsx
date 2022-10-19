@@ -32,7 +32,7 @@ export const TxList = () => {
                     tx.map((hash) => (
                         <tr className="bg-hot border-bottom border-emerald-700 text-mild" key={hash.timestamp}>
                         <th scope="row" className="py-4 px-6 font-medium text-spicy whitespace-nowrap dark:text-white">
-                            <a href={`https://explorer.harmony.one/tx/${hash.hash}`}>
+                            <a href={`https://explorer.harmony.one/tx/${hash.hash}`} target="blank">
                                 {hash.hash.substring(0,30)}
                             </a>
                         </th>

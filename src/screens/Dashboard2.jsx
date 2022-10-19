@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
-import { TxList } from '../components/txList';
+import  NftList  from '../components/nftList';
 
 function Dashboard2() {
   return (
@@ -14,7 +14,7 @@ function Dashboard2() {
             <div className="p-4 md:w-full">
             <div className="h-full bg-sss border border-gray-700 shadow-md w-full mx-4 rounded-lg overflow-hidden py-10 ">
               <div className="p-3">
-            <TxList />
+            <NftList />
             </div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { inputAddresses } from "../components/Waddress";
+import moment from "moment/moment";
 const APIKEY = 'ckey_f2a7d8e02ddb427ea2764a67733';
 const baseURL = 'https://api.covalenthq.com/v1';
 const blockchainChainId = '1666600000';
@@ -61,8 +62,7 @@ export const getNFTs = async() => {
         console.log(res.data.data);
         for(const j of res.data.data.items){
             if(j.type === "nft"){
-                console.log(j);
-                NFTs.push({contract_address : j.contract_address, contract_name : j.contract_name, type : j.supports_erc[1], balances : j.nft_data, last_interacted : j.last_transferred_at});
+                NFTs.push({contract_address : j.contract_address, contract_name : j.contract_name, type : j.supports_erc[1], balances : j.nft_data.length, last_interacted : moment(j.last_transferred_at).format("dddd, MMMM Do YYYY")});
             }
         }
     }
