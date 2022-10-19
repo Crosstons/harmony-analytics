@@ -5,15 +5,13 @@ import { useState } from 'react';
 
 function Navbar() {
 
-  const [first, setFirst] = useState(false);
+  const [first, setFirst] = useState(true);
 
   const changeFirst = () => {
     if(!first){
       setFirst(true);
-      console.log(first);
     }
     else{
-      console.log(first);
       setFirst(false);
     }
   }
@@ -28,11 +26,8 @@ function Navbar() {
       <div className="flex md:order-2">
       <div className="flex justify-center">
       <div className="inline-flex rounded-md shadow-sm" role="group">
-      <Link type="button" to="/dashboard/" className={ first ? "py-2 px-4 text-sm font-medium text-mild bg-spicy rounded-l-lg border-r-2 border-emerald-700 hover:bg-spicy hover:text-white focus:z-10 focus:bg-emerald-900 focus:text-white peer-checked:bg-spicy" : "py-2 px-4 text-sm font-medium text-mild bg-hot rounded-l-lg border-r-2 border-emerald-700 hover:bg-spicy hover:text-white focus:z-10 focus:bg-emerald-900 focus:text-white peer-checked:bg-spicy"} onClick={changeFirst}>
-        HRC20
-      </Link>
-      <Link type="button" to="/hrc721/" className={ first ? "py-2 px-4 text-sm font-medium text-mild bg-hot rounded-r-md hover:bg-spicy hover:text-white focus:z-10 focus:bg-emerald-900 " : "py-2 px-4 text-sm font-medium text-mild bg-spicy rounded-r-md hover:bg-spicy hover:text-white focus:z-10 focus:bg-emerald-900"} onClick={changeFirst}>
-        NFTs
+      <Link type="button" to={ first ? "/hrc721/" : "/dashboard/" } className="py-2 px-4 text-sm font-medium text-mild bg-spicy rounded border-r-2 border-emerald-700 hover:bg-spicy hover:text-white focus:z-10 focus:bg-emerald-900 focus:text-white peer-checked:bg-spicy" onClick={changeFirst}>
+        { first ? "NFTs" : "HRC20"}
       </Link>
     </div>
     </div>     
