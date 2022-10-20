@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
-import  NftList  from '../components/nftList';
+import  NftList  from '../components/NftList';
 
 function Dashboard2() {
   return (

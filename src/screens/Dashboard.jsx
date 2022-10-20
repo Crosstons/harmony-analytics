@@ -7,7 +7,7 @@ import { non_zero_tokens, portfolio_value, portfolio_value24, token_balances } f
 import Navbar from '../components/Navbar';
 import Loader from './Loader';
 import { Txs } from '../components/Txs';
-import { TxList } from '../components/txList';
+import { TxList } from '../components/TxList';
 
 class Dashboard extends React.Component {
   state = {loading : true, curr_value : 0, avg_value : 0, holdingsData : [], nonZero_tokens : []};
@@ -25,6 +25,7 @@ class Dashboard extends React.Component {
         <Navbar />
       </header>
       <main className="">
+
         <div className="container px-5 py-12 mx-auto">
           <div className="flex flex-wrap m-4">
             <div className="p-4 md:w-1/3">

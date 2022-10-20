@@ -3,6 +3,7 @@ import Landing from './screens/Landing';
 import Dashboard from './screens/Dashboard';
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Dashboard2 from './screens/Dashboard2';
+import Error from './screens/Error';
 
 function App() {
   
