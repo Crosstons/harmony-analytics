@@ -23,15 +23,17 @@ function Navbar() {
           <img src={logo} className="mr-3 h-6 sm:h-9" alt=""/>
           <span className="self-center text-2xl font-barlow font-semibold whitespace-nowrap text-mild">Harmony Analytics</span>
       </a>
-      <div className="flex md:order-2">
+    <div className="flex md:order-2">
       <div className="flex justify-center">
       <div className="inline-flex rounded-md shadow-sm" role="group">
-      <Link type="button" to={ first ? "/hrc721/" : "/dashboard/" } className="py-2 px-4 text-sm font-medium text-mild bg-spicy rounded border-r-2 border-emerald-700 hover:bg-spicy hover:text-white focus:z-10 focus:bg-emerald-900 focus:text-white peer-checked:bg-spicy" onClick={changeFirst}>
+      <Link type="button" to={ first ? "/hrc721/" : "/dashboard/" } className="py-2 px-4 text-l font-medium text-mild bg-spicy rounded border-r-2 border-emerald-700 hover:bg-spicy hover:text-white focus:z-10 focus:bg-emerald-900 focus:text-white peer-checked:bg-spicy" onClick={changeFirst}>
         { first ? "NFTs" : "HRC20"}
       </Link>
     </div>
     </div>     
     </div>
+
+
       <div className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-cta">
       </div>
       </div>

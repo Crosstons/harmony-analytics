@@ -41,7 +41,7 @@ export const Earnings = () => {
           <AreaChart
             width={400}
             height={250}
-            data={checked ? data_7.reverse() : data_30.reverse()}
+            data={checked ? data_7 : data_30.reverse()}
             margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
           >
             <XAxis dataKey="name" />
