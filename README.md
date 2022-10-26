@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Harmony Analytics
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project has been specially crafted for the Harmony X Encode Hackathon 2022 !
 
-## Available Scripts
+## Team Name - Vanguard
 
-In the project directory, you can run:
+Name of Team Members - 
+> [Shubh Patel](https://twitter.com/BholuBholuu?s=20&t=SkGcS3vJ3j_VHaGPN3rgHw) <br /> 
+> [Vraj Desai](https://twitter.com/notdguynxtdoor?t=avGTPjKqFMZIyLPaPegRAA&s=08) <br />
+> [Krishang Shah](https://twitter.com/krishang_shah16?t=pPQLWOXltS-I5zI3-p0G6A&s=08) <br/>
+> [Tirth Prajapati](https://twitter.com/tirth2864?s=20&t=SkGcS3vJ3j_VHaGPN3rgHw) <br />
 
-### `npm start`
+## Why Harmony Analytics ?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The need for a platform where users can enter multiple wallet addresses to retrieve and analyse their token holdings with respect to time was high.
+So we came up with Harmony Analytics to solve the above mentioned problem with the use of Covalent endpoints and our data manipulation skills.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Important Links - 
 
-### `npm test`
+Deployed Website - [Link](https://harmony-analytics.vercel.app/) <br />
+Presentation - [PDF](https://drive.google.com/file/d/1OUE8dwIUcBq5E9irHI6RDNJclAvQKmH_/view) <br />
+Problem Statement - [Doc](https://docs.google.com/document/d/1ORWcsoVBJEGMdgtvd-__Evgh22U0J5uV/view) <br />
+Demo Video - [YT](https://www.youtube.com/watch?v=GV47FheKIEI) <br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tracks - 
 
-### `npm run build`
+The project is applied for the following tracks - 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1) [Create a visualisation / analytics tool for HRC20/721/1155 transactions #121](https://github.com/harmony-one/bounties/issues/121) <br />
+2) [COVALENT CHALLENGE](https://encodeclub.notion.site/ecaa23d0d51743e893073a7a1e487dd2?v=caed3d433ba4492dab24f8699304b3a5&p=154edcf9677d47908fa54fbdc78fdb17&pm=s) <br />
