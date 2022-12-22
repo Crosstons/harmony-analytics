@@ -1,3 +1,7 @@
+## Runner Up of Harmony Track and Covalent Prize Runner Up Too!
+
+> [Medium of Encode Club](https://medium.com/encode-club/encode-club-x-harmony-hackathon-prizewinners-and-summary-e088485c8af7)
+
 # Harmony Analytics
 
 This project has been specially crafted for the Harmony X Encode Hackathon 2022 !
